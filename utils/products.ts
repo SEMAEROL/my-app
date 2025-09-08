@@ -7,6 +7,7 @@ export const products = [
       brand: "apple",
       category: "Phone",
       inStock: true,
+      image: "/iphone14.jpg",
       reviews: []
     },
     {
@@ -17,6 +18,7 @@ export const products = [
       brand: "logitech",
       category: "Accesories",
       inStock: true,
+      image: "/logitech-mx.jpg",
       reviews: [
         {
           id: "64a5a615b8470c6e06959ee",
@@ -33,6 +35,7 @@ export const products = [
       brand: "Samsung",
       category: "Phone",
       inStock: true,
+      image: "/galaxy-s22.jpg",
       reviews: []
     },
     {
@@ -43,6 +46,7 @@ export const products = [
       brand: "Sony",
       category: "Accessories",
       inStock: false,
+      image: "/sony-xm5.jpg",
       reviews: [
         {
           id: "64c34567890abcdef1234567",
@@ -61,6 +65,7 @@ export const products = [
       brand: "Dell",
       category: "Laptop",
       inStock: true,
+      image: "/dell-xps-13.jpg",
       reviews: []
     }
   ];
