@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Counter from '@/components/general/Counter'
 import Button from '@/components/general/Button'
 import Comment from '@/components/detail/Comment'
+import UseCart from '@/app/hooks/useCart'
 
 type Product = {
   id: string;
@@ -28,6 +29,8 @@ export type CardProductProps = {
   
 
 const DetailClient = ({ product }: { product: Product }) => {
+  const { addToBasket } = UseCart();
+
   const [cardProduct, setCardProduct] = useState<CardProductProps>({
     id: product.id,
     name: product.name,
@@ -37,7 +40,6 @@ const DetailClient = ({ product }: { product: Product }) => {
     image: product.image ?? '',
     inStock: product.inStock,
   })
-
   // Reviews state and new review inputs
   type Review = { id: string; user: string; comment: string; rating?: number; createdAt?: string }
   const [reviews, setReviews] = useState<Review[]>(Array.isArray(product.reviews) ? (product.reviews as Review[]) : [])
@@ -91,7 +93,7 @@ const DetailClient = ({ product }: { product: Product }) => {
       <div className="mt-4">
         <Counter cardProduct={cardProduct} increaseFunc={increaseFunc} decreaseFunc={decreaseFunc} />
         <div className="text-lg md:text-2xl text-orange-600 mt-3">
-            <Button text="Sepete Ekle" small onClick={() => { /* TODO: add to cart handler */ }} />
+            <Button text="Sepete Ekle" small onClick={() => addToBasket(cardProduct)} />
         </div>
         <div className="mt-6">
           <div className="text-lg font-semibold mb-2">Yorumlar</div>
