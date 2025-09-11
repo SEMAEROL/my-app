@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Counter from '@/components/general/Counter'
 import Button from '@/components/general/Button'
-import Comment from '@/components/detail/Comment'
+import ReviewComment from '@/components/detail/Comment'
 import UseCart from '@/app/hooks/useCart'
 
 type Product = {
@@ -99,7 +99,7 @@ const DetailClient = ({ product }: { product: Product }) => {
           <div className="text-lg font-semibold mb-2">Yorumlar</div>
           {reviews?.length ? (
             reviews.map((r) => (
-              <Comment key={r.id} prd={r} />
+              <ReviewComment key={r.id} prd={r} />
             ))
           ) : (
             <div className="text-sm text-slate-500">Henüz yorum yok.</div>

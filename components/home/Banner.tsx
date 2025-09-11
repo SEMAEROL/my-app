@@ -2,15 +2,15 @@ import Image from "next/image";
 
 const Banner = () => {
     return (
-        <div className="h-[237px] px-4 bg-black flex items-center justify-center">
-            <div className="relative h-[137px] relative w-full">
+        <div className="w-full bg-black/90 rounded-md">
+            <div className="relative aspect-[36/9] w-full">
                 <Image
-                    src="/reklam.jpg"
+                    src="/ChatGPT Image 11 Eyl 2025 11_46_39.png"
                     alt="Reklam"
                     fill
                     priority
                     sizes="100vw"
-                    className="object-cover rounded-md"
+                    className="object-cover rounded-md bg-black"
                 />
             </div>
         </div>

@@ -2,18 +2,24 @@ import Heading from "../general/Heading"
 import { products } from "@/utils/products"
 import ProductCard from "./ProductCard"
 
-const Products = () => {
+type Props = {
+  selectedCategory: string | null
+}
+
+const Products = ({ selectedCategory }: Props) => {
+    const visible = selectedCategory
+      ? products.filter(p => p.category === selectedCategory)
+      : products
+
     return (
       <div>
-        <Heading text="Tüm ürünler"/>
+        <Heading text={selectedCategory ? selectedCategory : "Tüm ürünler"}/>
         <div>
              {
-              products.map(product => {
-            return (
-            <ProductCard key={product.id} product={product}/>
-                   )
-                    } )
-              }
+              visible.map(product => (
+                <ProductCard key={product.id} product={product}/>
+              ))
+             }
          </div>
 
       </div>
